@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>RootBound Glow — Medical Aesthetics by RootBound Health</title>
-<meta name="description" content="Medical aesthetics by RootBound Health. Daxxify, HydraFacial, SkinPen microneedling, and Ourself skincare. Seattle, WA.">
+<meta name="description" content="Premium medical aesthetics by RootBound Health. Daxxify, HydraFacial, SkinPen microneedling, Scalp PRP, and Ourself clinical skincare. Evidence-based treatments, transparent pricing. Seattle, WA.">
 <meta name="author" content="RootBound Health PLLC">
 <link rel="canonical" href="https://glow.rootboundhealth.com">
 <meta property="og:title" content="RootBound Glow — Medical Aesthetics">
-<meta property="og:description" content="Daxxify, HydraFacial, SkinPen, and Ourself skincare. Supervised by Kailyn Elliott, DNP, FNP-BC. Seattle, WA.">
+<meta property="og:description" content="Daxxify, HydraFacial, SkinPen, Scalp PRP, and Ourself skincare. Board-certified provider. Transparent pricing. Seattle, WA.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RootBound Health">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 
 body {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -44,6 +44,41 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* UTILITY BAR */
+.utility-bar {
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(212,175,55,0.1);
+  padding: 8px 40px;
+  font-size: 12px;
+  color: var(--slate);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.utility-bar a {
+  color: var(--slate);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.utility-bar a:hover { color: var(--gold); }
+
+.utility-left, .utility-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.utility-sep {
+  width: 1px;
+  height: 12px;
+  background: rgba(249,245,236,0.15);
 }
 
 /* HEADER */
@@ -106,6 +141,7 @@ nav a:hover { color: var(--gold); }
   color: var(--gold);
 }
 .btn-outline:hover { background: var(--gold-pale); }
+.btn-sm { padding: 7px 18px; font-size: 12px; }
 
 /* HERO */
 .hero {
@@ -151,6 +187,20 @@ nav a:hover { color: var(--gold); }
 
 .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* BREADCRUMB */
+.breadcrumb {
+  padding: 16px 40px;
+  font-size: 13px;
+  color: var(--slate);
+}
+
+.breadcrumb a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
 /* DIVIDER */
 .divider {
   width: 60px;
@@ -175,27 +225,95 @@ section {
   margin-bottom: 12px;
 }
 
+.section-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  color: rgba(212,175,55,0.15);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
 section h2 {
   font-family: 'DM Serif Display', serif;
   font-size: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   line-height: 1.2;
 }
 
-section > p {
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.price-badge {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-deep);
+  background: var(--gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+section > p, .section-desc {
   font-size: 16px;
   color: var(--slate);
   max-width: 640px;
   line-height: 1.7;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
+}
+
+/* SERVICE TABLE */
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+.service-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+.service-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--ivory);
+  border-bottom: 1px solid rgba(212,175,55,0.08);
+  vertical-align: top;
+}
+
+.service-table tr:hover { background: rgba(212,175,55,0.04); }
+
+.service-table .price-cell {
+  font-weight: 600;
+  color: var(--gold-light);
+  white-space: nowrap;
+}
+
+.service-table .note-cell {
+  font-size: 13px;
+  color: var(--slate);
 }
 
 /* SERVICE CARDS */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .service-card {
@@ -233,7 +351,7 @@ section > p {
   font-size: 14px;
   color: var(--slate);
   line-height: 1.7;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .service-card .price {
@@ -242,12 +360,45 @@ section > p {
   color: var(--gold-light);
 }
 
-/* OURSELF PRODUCTS */
+.service-card ul {
+  list-style: none;
+  margin: 8px 0 16px;
+}
+
+.service-card ul li {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.6;
+  padding: 3px 0 3px 18px;
+  position: relative;
+}
+
+.service-card ul li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+/* PRODUCT CATEGORIES */
+.product-category {
+  margin-top: 40px;
+}
+
+.product-category h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--ivory);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  margin-top: 32px;
 }
 
 .product-item {
@@ -256,6 +407,12 @@ section > p {
   border-radius: var(--radius);
   padding: 20px;
   text-align: center;
+  transition: all var(--transition);
+}
+
+.product-item:hover {
+  border-color: rgba(212,175,55,0.25);
+  transform: translateY(-1px);
 }
 
 .product-item h4 {
@@ -270,6 +427,92 @@ section > p {
   font-size: 15px;
   font-weight: 700;
   color: var(--gold);
+}
+
+.product-item .detail {
+  font-size: 12px;
+  color: var(--slate);
+  margin-top: 4px;
+}
+
+/* BUNDLE TABLE */
+.bundle-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+.bundle-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+.bundle-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--ivory);
+  border-bottom: 1px solid rgba(212,175,55,0.08);
+  vertical-align: top;
+}
+
+.bundle-table tr:hover { background: rgba(212,175,55,0.04); }
+
+.bundle-price {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.bundle-compare {
+  font-size: 12px;
+  color: var(--slate);
+  text-decoration: line-through;
+}
+
+/* MEMBER DISCOUNT */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.member-card {
+  background: rgba(0,59,79,0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.member-card:hover {
+  border-color: rgba(212,175,55,0.3);
+}
+
+.member-card .discount {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.member-card .tier {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+
+.member-card .tier-sub {
+  font-size: 12px;
+  color: var(--slate);
 }
 
 /* PROVIDER */
@@ -360,8 +603,8 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -387,11 +630,49 @@ footer a {
 
 footer a:hover { color: var(--gold); }
 
-.footer-bottom {
+.footer-legal {
   max-width: 1100px;
   margin: 32px auto 0;
   padding-top: 24px;
   border-top: 1px solid rgba(212,175,55,0.1);
+}
+
+.footer-legal p {
+  font-size: 12px;
+  color: rgba(249,245,236,0.35);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.footer-credential {
+  font-size: 13px;
+  color: var(--slate);
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.footer-badges {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.footer-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  border: 1px solid rgba(212,175,55,0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(212,175,55,0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -403,17 +684,88 @@ footer a:hover { color: var(--gold); }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 13px; display: inline; }
 
+/* FLOATING CONTACT BAR */
+.floating-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(212,175,55,0.3);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  z-index: 200;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.floating-bar a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ivory);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.floating-bar a:hover { color: var(--gold); }
+
+.floating-bar .btn { padding: 8px 20px; font-size: 13px; }
+
+/* COOKIE BANNER */
+.cookie-banner {
+  position: fixed;
+  bottom: 52px;
+  left: 24px;
+  right: 24px;
+  max-width: 480px;
+  background: var(--navy-deep);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  z-index: 300;
+  box-shadow: var(--shadow-lg);
+  display: none;
+}
+
+.cookie-banner.show { display: block; }
+
+.cookie-banner p {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.cookie-banner .cookie-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cookie-banner .btn { padding: 6px 16px; font-size: 12px; }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .utility-bar { padding: 8px 16px; font-size: 11px; flex-direction: column; text-align: center; }
+  .utility-left, .utility-right { justify-content: center; }
+  .utility-sep { display: none; }
   header { padding: 0 20px; }
   nav { gap: 16px; }
   nav a { font-size: 12px; }
   .hero { padding: 60px 20px 50px; }
   section { padding: 60px 20px; }
+  .section-header { flex-direction: column; }
+  .section-number { font-size: 36px; }
   .provider { flex-direction: column; padding: 32px 24px; text-align: center; }
   .contact-grid { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .service-table, .bundle-table { font-size: 13px; }
+  .service-table th, .service-table td,
+  .bundle-table th, .bundle-table td { padding: 10px 8px; }
+  .floating-bar { gap: 12px; padding: 8px 16px; }
 }
 
 @media (max-width: 480px) {
@@ -421,168 +773,793 @@ footer a:hover { color: var(--gold); }
   .hero h1 { font-size: 32px; }
   .service-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr 1fr; }
+  .service-table td:nth-child(3) { display: none; }
 }
+
+/* Add padding for floating bar */
+body { padding-bottom: 52px; }
 </style>
 </head>
 <body>
+
+<!-- COOKIE CONSENT BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>This website uses cookies to improve your experience and analyze site traffic. By continuing to browse, you agree to our use of cookies.</p>
+  <div class="cookie-actions">
+    <button class="btn" onclick="acceptCookies()">Accept</button>
+    <button class="btn btn-outline" onclick="acceptCookies()">Decline</button>
+  </div>
+</div>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-left">
+    <a href="tel:+14256996873">(425) 699-6873</a>
+    <span class="utility-sep"></span>
+    <span>Fax: (800) 381-1472</span>
+    <span class="utility-sep"></span>
+    <span>10212 5th Ave NE, Suite 116, Seattle, WA 98125</span>
+  </div>
+  <div class="utility-right">
+    <span>Mon&ndash;Fri 7am&ndash;6pm &middot; Sat&ndash;Sun 9am&ndash;5pm</span>
+    <span class="utility-sep"></span>
+    <a href="mailto:kailyn.elliott@rootboundhealth.com">kailyn.elliott@rootboundhealth.com</a>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header>
   <a href="/" class="logo">RootBound <span>Glow</span></a>
   <nav>
-    <a href="#services">Services</a>
-    <a href="#products">Products</a>
+    <a href="#neurotoxins">Neurotoxins</a>
+    <a href="#hydrafacial">HydraFacial</a>
+    <a href="#skinpen">SkinPen</a>
+    <a href="#products">Skincare</a>
     <a href="#provider">Provider</a>
     <a href="#contact">Contact</a>
-    <a href="https://rootboundhealth.com" class="btn-outline btn" style="padding: 7px 18px; font-size: 12px;">Main Site</a>
+    <a href="https://dashboard.boulevard.io/booking/rootbound-health" class="btn btn-sm">Book Now</a>
   </nav>
 </header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="https://rootboundhealth.com">Home</a> / Aesthetics
+</div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-badge">Medical Aesthetics by RootBound Health</div>
-  <h1>Science-driven skin care, <em>beautifully</em> delivered.</h1>
-  <p>Daxxify neuromodulators, HydraFacial, SkinPen microneedling, and Ourself subtopical skincare — supervised by a board-certified nurse practitioner. Real results, no shortcuts.</p>
+  <h1>Premium Aesthetic Services</h1>
+  <p>Evidence-based aesthetic treatments delivered by a board-certified provider. Natural results, transparent pricing.</p>
   <div class="hero-cta">
     <a href="https://dashboard.boulevard.io/booking/rootbound-health" class="btn">Book Your Appointment</a>
-    <a href="#services" class="btn btn-outline">Explore Services</a>
+    <a href="#neurotoxins" class="btn btn-outline">Explore Services</a>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-label">What We Offer</div>
-  <h2>Our Aesthetic Services</h2>
-  <p>Every treatment is performed or directly supervised by Kailyn Elliott, DNP, FNP-BC. We pair clinical precision with genuine care.</p>
-
-  <div class="service-grid">
-    <div class="service-card">
-      <div class="tag">Neuromodulator</div>
-      <h3>Daxxify</h3>
-      <p>The only FDA-approved peptide-powered neuromodulator. Longer-lasting results for frown lines, crow's feet, forehead, jaw slimming, and more. 20 treatment areas available.</p>
-      <div class="price">From $78 &mdash; Full Face $1,300</div>
+<!-- SECTION 01: NEUROTOXINS -->
+<section id="neurotoxins">
+  <div class="section-number">01</div>
+  <div class="section-header">
+    <div>
+      <div class="section-label">Neurotoxins</div>
+      <h2>DAXXIFY</h2>
     </div>
-
-    <div class="service-card">
-      <div class="tag">Facial Treatment</div>
-      <h3>HydraFacial</h3>
-      <p>Cleanse, extract, and hydrate in one session. Express, Deluxe, and Platinum tiers with Perk lip and eye add-ons. Body and lymphatic drainage protocols available.</p>
-      <div class="price">From $175 &mdash; Platinum $395</div>
-    </div>
-
-    <div class="service-card">
-      <div class="tag">Microneedling</div>
-      <h3>SkinPen</h3>
-      <p>FDA-cleared for acne scars. Collagen induction therapy for scars, stretch marks, fine lines, hyperpigmentation, and skin laxity. PRP add-on available.</p>
-      <div class="price">From $350 &mdash; PRP Face + Neck $650</div>
-    </div>
-
-    <div class="service-card">
-      <div class="tag">Scalp Treatment</div>
-      <h3>Keravive</h3>
-      <p>HydraFacial for your scalp. Exfoliates, nourishes, and hydrates the scalp to promote healthier, fuller-looking hair. Includes 30-day home spray.</p>
-      <div class="price">Single $295 &mdash; 3-Pack $795</div>
-    </div>
+    <span class="price-badge">From $78</span>
   </div>
+  <p class="section-desc">Premium DAXXIFY neurotoxin &mdash; peptide-powered, 4&ndash;6 month duration. The only FDA-approved peptide-formulated botulinum toxin. No animal-derived components. Longer-lasting results than conventional options.</p>
+
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Treatment</th>
+        <th>Price</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>DAXXIFY Full Face</strong><br><span style="font-size:12px;color:var(--slate)">Glabella + Frontalis + Crow's Feet</span></td>
+        <td class="price-cell">$1,300<br><span style="font-size:11px;color:var(--slate)">DPC $1,100 / VIP $1,000</span></td>
+        <td class="note-cell">80&ndash;100 units. Complete upper face rejuvenation.</td>
+      </tr>
+      <tr>
+        <td><strong>Glabella (11s) Only</strong><br><span style="font-size:12px;color:var(--slate)">FDA-Cleared</span></td>
+        <td class="price-cell">$520<br><span style="font-size:11px;color:var(--slate)">DPC $440 / VIP $400</span></td>
+        <td class="note-cell">~40 units. Only FDA-approved indication.</td>
+      </tr>
+      <tr>
+        <td><strong>Crow's Feet</strong> (Both Sides)</td>
+        <td class="price-cell">$520</td>
+        <td class="note-cell">~40 units total; ~20 per side.</td>
+      </tr>
+      <tr>
+        <td><strong>Frontalis</strong> (Forehead Lines)</td>
+        <td class="price-cell">$390</td>
+        <td class="note-cell">~30 units. Must pair with glabella.</td>
+      </tr>
+      <tr>
+        <td><strong>Nefertiti Lift</strong> (Jaw + Neck)</td>
+        <td class="price-cell">$1,170</td>
+        <td class="note-cell">~90 units. Jawline + platysmal bands.</td>
+      </tr>
+      <tr>
+        <td><strong>Neck Bands</strong> (Platysmal)</td>
+        <td class="price-cell">$975</td>
+        <td class="note-cell">~75 units bilateral.</td>
+      </tr>
+      <tr>
+        <td><strong>Masseter / Jaw Slimming</strong></td>
+        <td class="price-cell">$1,300</td>
+        <td class="note-cell">~100 units. Cosmetic, bilateral.</td>
+      </tr>
+      <tr>
+        <td><strong>Bruxism / TMJ</strong> (Functional)</td>
+        <td class="price-cell">$1,300&ndash;$1,560</td>
+        <td class="note-cell">Masseter &plusmn; temporalis. Medical indication.</td>
+      </tr>
+      <tr>
+        <td><strong>Lip Flip + Gummy Smile Combo</strong></td>
+        <td class="price-cell">$195</td>
+        <td class="note-cell">~15 units. Saves $13 vs. individual.</td>
+      </tr>
+      <tr>
+        <td><strong>Chin Dimpling / Mentalis</strong></td>
+        <td class="price-cell">$156</td>
+        <td class="note-cell">~12 units.</td>
+      </tr>
+      <tr>
+        <td><strong>Chemical Brow Lift</strong></td>
+        <td class="price-cell">$156</td>
+        <td class="note-cell">~12 units. Subtle lift, no surgery.</td>
+      </tr>
+      <tr>
+        <td><strong>Lip Flip</strong></td>
+        <td class="price-cell">$130</td>
+        <td class="note-cell">~10 units. Eversion without volume.</td>
+      </tr>
+      <tr>
+        <td><strong>Bunny Lines</strong> (Nasalis)</td>
+        <td class="price-cell">$130</td>
+        <td class="note-cell">~10 units.</td>
+      </tr>
+      <tr>
+        <td><strong>Gummy Smile</strong></td>
+        <td class="price-cell">$78</td>
+        <td class="note-cell">~6 units. Alar groove precision.</td>
+      </tr>
+      <tr>
+        <td><strong>Hyperhidrosis</strong> (Underarms)</td>
+        <td class="price-cell">$1,950</td>
+        <td class="note-cell">~150 units. Minor's starch-iodine test included.</td>
+      </tr>
+      <tr>
+        <td><strong>Neurotoxin (Medical)</strong><br><span style="font-size:12px;color:var(--slate)">Cervical Dystonia / Chronic Migraine</span></td>
+        <td class="price-cell">Insurance-billed</td>
+        <td class="note-cell">FDA-approved. CPT 64615. Prior auth required.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;color:var(--slate);margin-top:16px;line-height:1.6">Common treatment areas: frontalis (forehead lines), glabella (frown lines / &ldquo;11s&rdquo;), crow's feet, lip flip, jaw slimming, platysmal bands, hyperhidrosis. All Daxxify procedures performed exclusively by Kailyn Elliott, DNP, ARNP, FNP-BC.</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- PACKAGES -->
-<section>
-  <div class="section-label">Value &amp; Results</div>
-  <h2>Series Packages &amp; Treatment Journeys</h2>
-  <p>Multi-session plans designed for lasting results. Save on series packages and follow structured treatment journeys tailored to your goals.</p>
-
-  <div class="service-grid">
-    <div class="service-card">
-      <div class="tag">Series Packages</div>
-      <h3>Save with Series</h3>
-      <p>HydraFacial Express 6-Pack, Deluxe and Platinum 4-Packs, Keravive 3-Pack, SkinPen Face and PRP series. Save up to $300.</p>
-      <div class="price">From $795</div>
+<!-- SECTION 02: HYDRAFACIAL -->
+<section id="hydrafacial">
+  <div class="section-number">02</div>
+  <div class="section-header">
+    <div>
+      <div class="section-label">Facial Treatments</div>
+      <h2>HydraFacial</h2>
     </div>
-
-    <div class="service-card">
-      <div class="tag">Multi-Modality</div>
-      <h3>Treatment Journeys</h3>
-      <p>5-session plans combining HydraFacial, SkinPen, and Daxxify over 11&ndash;14 weeks. Anti-aging, brightening, perioral, hydration, and preventive tracks.</p>
-      <div class="price">From $1,450</div>
-    </div>
-
-    <div class="service-card">
-      <div class="tag">Special Offers</div>
-      <h3>Intro &amp; Event Packages</h3>
-      <p>New patient intro, Fitzpatrick-specific protocols, GLP-1 skin restoration, wedding packages, and seasonal specials.</p>
-      <div class="price">From $185</div>
-    </div>
-
-    <div class="service-card">
-      <div class="tag">Skin-Specific</div>
-      <h3>Fitzpatrick Protocols</h3>
-      <p>Customized treatment plans for every skin type. Porcelain (I-II), Equilibrium (III), Caramel (IV), and Sanctuary (V-VI) protocols available.</p>
-      <div class="price">From $860</div>
-    </div>
+    <span class="price-badge">From $250</span>
   </div>
+  <p class="section-desc">Medical-grade facial technology combining cleansing, extraction, hydration, and lymphatic therapy &mdash; customized to your skin type, concerns, and goals.</p>
+
+  <h3 style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ivory);margin-bottom:16px;">Core Protocols</h3>
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Treatment</th>
+        <th>Price</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Express (Signature)</strong><br><span style="font-size:12px;color:var(--slate)">Cleanse + Extract + Hydrate (3-step)</span></td>
+        <td class="price-cell">$250</td>
+        <td class="note-cell">30 min</td>
+      </tr>
+      <tr>
+        <td><strong>Deluxe</strong><br><span style="font-size:12px;color:var(--slate)">+ Booster + LED (5-step)</span></td>
+        <td class="price-cell">$310</td>
+        <td class="note-cell">45&ndash;60 min</td>
+      </tr>
+      <tr>
+        <td><strong>Platinum</strong><br><span style="font-size:12px;color:var(--slate)">+ Lymphatic Drainage + Booster + LED (7-step)</span></td>
+        <td class="price-cell">$395</td>
+        <td class="note-cell">60&ndash;75 min</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ivory);margin:32px 0 16px;">Perk Add-Ons</h3>
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Combination</th>
+        <th>Express</th>
+        <th>Deluxe</th>
+        <th>Platinum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>+ Perk Lip</td>
+        <td class="price-cell">$295</td>
+        <td class="price-cell">$355</td>
+        <td class="price-cell">$440</td>
+      </tr>
+      <tr>
+        <td>+ Perk Eye</td>
+        <td class="price-cell">$295</td>
+        <td class="price-cell">$355</td>
+        <td class="price-cell">$440</td>
+      </tr>
+      <tr>
+        <td>+ Perk Lip + Perk Eye</td>
+        <td class="price-cell">$335</td>
+        <td class="price-cell">$395</td>
+        <td class="price-cell">$480</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ivory);margin:32px 0 16px;">Body &amp; Lymphatic Protocols</h3>
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Treatment</th>
+        <th>Price</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Silver Queen</strong> &mdash; Neck &amp; D&eacute;collet&eacute;</td>
+        <td class="price-cell">$175</td>
+        <td class="note-cell">35 min</td>
+      </tr>
+      <tr>
+        <td><strong>Body</strong> &mdash; Upper Back</td>
+        <td class="price-cell">$175</td>
+        <td class="note-cell">35 min</td>
+      </tr>
+      <tr>
+        <td><strong>Body</strong> &mdash; Upper Arms (Bilateral)</td>
+        <td class="price-cell">$195</td>
+        <td class="note-cell">35&ndash;40 min</td>
+      </tr>
+      <tr>
+        <td><strong>Body</strong> &mdash; Full Arms (Bilateral)</td>
+        <td class="price-cell">$225</td>
+        <td class="note-cell">45&ndash;55 min</td>
+      </tr>
+      <tr>
+        <td><strong>Platinum + Neck &amp; D&eacute;collet&eacute;</strong></td>
+        <td class="price-cell">$495</td>
+        <td class="note-cell">75&ndash;90 min</td>
+      </tr>
+      <tr>
+        <td><strong>Platinum + Upper Back</strong></td>
+        <td class="price-cell">$495</td>
+        <td class="note-cell">80&ndash;95 min</td>
+      </tr>
+      <tr>
+        <td><strong>Lymph Body Full</strong> &mdash; Facial + Arms + Back</td>
+        <td class="price-cell">$595</td>
+        <td class="note-cell">110&ndash;130 min</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ivory);margin:32px 0 16px;">Series Packages</h3>
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Price</th>
+        <th>Savings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Express 6-Pack</strong> &mdash; Monthly maintenance</td>
+        <td class="price-cell">$1,200</td>
+        <td class="note-cell">Saves $300</td>
+      </tr>
+      <tr>
+        <td><strong>Deluxe 4-Pack</strong> &mdash; Quarterly targeted</td>
+        <td class="price-cell">$1,060</td>
+        <td class="note-cell">Saves ~$180</td>
+      </tr>
+      <tr>
+        <td><strong>Platinum 4-Pack</strong> &mdash; Quarterly premium</td>
+        <td class="price-cell">$1,355</td>
+        <td class="note-cell">Saves ~$225</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 02b: OTHER FACIAL SERVICES -->
+<section>
+  <div class="section-number">02b</div>
+  <div class="section-header">
+    <div>
+      <div class="section-label">Additional Services</div>
+      <h2>Other Facial Services</h2>
+    </div>
+    <span class="price-badge">From $75</span>
+  </div>
+  <p class="section-desc">Additional skin rejuvenation therapies to complement your HydraFacial treatments or as standalone services.</p>
+
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Treatment</th>
+        <th>Price</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Keravive Scalp Treatment</strong><br><span style="font-size:12px;color:var(--slate)">HydraFacial for your scalp. 30-day home spray included.</span></td>
+        <td class="price-cell">$295</td>
+        <td class="note-cell">45&ndash;60 min</td>
+      </tr>
+      <tr>
+        <td><strong>Keravive 3-Pack</strong></td>
+        <td class="price-cell">$795</td>
+        <td class="note-cell">Saves $90</td>
+      </tr>
+      <tr>
+        <td><strong>Dermaplaning</strong> (Standalone)</td>
+        <td class="price-cell">$145</td>
+        <td class="note-cell">25 min &middot; Add-on: $100</td>
+      </tr>
+      <tr>
+        <td><strong>LED Light Therapy</strong> (Standalone)</td>
+        <td class="price-cell">$75</td>
+        <td class="note-cell">20&ndash;30 min &middot; Red, Blue, or NIR</td>
+      </tr>
+      <tr>
+        <td><strong>Ourself Brightening Peel</strong> (In-Office)</td>
+        <td class="price-cell">$110</td>
+        <td class="note-cell">20&ndash;30 min &middot; All skin tones</td>
+      </tr>
+      <tr>
+        <td><strong>Ourself Dark Spot Peel</strong> (In-Office)</td>
+        <td class="price-cell">$140</td>
+        <td class="note-cell">20&ndash;30 min &middot; Targeted TCA treatment</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 03: SKINPEN -->
+<section id="skinpen">
+  <div class="section-number">03</div>
+  <div class="section-header">
+    <div>
+      <div class="section-label">Microneedling</div>
+      <h2>SkinPen Microneedling</h2>
+    </div>
+    <span class="price-badge">From $350</span>
+  </div>
+  <p class="section-desc">FDA-cleared SkinPen microneedling &mdash; the gold standard in collagen induction therapy. Creates controlled micro-channels to stimulate your skin's natural healing response for improved texture, tone, and firmness.</p>
+
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Treatment</th>
+        <th>Price</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SkinPen Face</strong><br><span style="font-size:12px;color:var(--slate)">Acne scars, fine lines, texture, pores</span></td>
+        <td class="price-cell">$350</td>
+        <td class="note-cell">60 min</td>
+      </tr>
+      <tr>
+        <td><strong>SkinPen Face + Neck</strong></td>
+        <td class="price-cell">$450</td>
+        <td class="note-cell">75&ndash;90 min</td>
+      </tr>
+      <tr>
+        <td><strong>SkinPen with PRP &mdash; Face</strong></td>
+        <td class="price-cell">$550</td>
+        <td class="note-cell">90 min</td>
+      </tr>
+      <tr>
+        <td><strong>SkinPen with PRP &mdash; Face + Neck</strong></td>
+        <td class="price-cell">$650</td>
+        <td class="note-cell">105&ndash;120 min</td>
+      </tr>
+      <tr>
+        <td><strong>Melasma / Hyperpigmentation</strong></td>
+        <td class="price-cell">$375</td>
+        <td class="note-cell">60 min</td>
+      </tr>
+      <tr>
+        <td><strong>Skin Laxity &mdash; Face</strong></td>
+        <td class="price-cell">$425</td>
+        <td class="note-cell">60 min &middot; Series 3&ndash;4 recommended</td>
+      </tr>
+      <tr>
+        <td><strong>Stretch Marks &mdash; Abdomen</strong></td>
+        <td class="price-cell">$550</td>
+        <td class="note-cell">60&ndash;90 min &middot; 4&ndash;6 sessions</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ivory);margin:32px 0 16px;">Series Packages</h3>
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Price</th>
+        <th>Savings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SkinPen Face 3-Pack</strong></td>
+        <td class="price-cell">$945</td>
+        <td class="note-cell">Saves $105</td>
+      </tr>
+      <tr>
+        <td><strong>SkinPen Face + Neck 3-Pack</strong></td>
+        <td class="price-cell">$1,215</td>
+        <td class="note-cell">Saves $135</td>
+      </tr>
+      <tr>
+        <td><strong>SkinPen + PRP Face 3-Pack</strong></td>
+        <td class="price-cell">$1,485</td>
+        <td class="note-cell">Saves $165</td>
+      </tr>
+      <tr>
+        <td><strong>&ldquo;Regenerate&rdquo; Series</strong><br><span style="font-size:12px;color:var(--slate)">3 &times; SkinPen + 3 &times; Express HydraFacial</span></td>
+        <td class="price-cell">$1,800</td>
+        <td class="note-cell">Saves ~$270</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;color:var(--slate);margin-top:16px;line-height:1.6">Package purchasers receive 10% off plus a $100 rebate sent directly to them after their series.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 04: SCALP PRP -->
+<section id="scalp-prp">
+  <div class="section-number">04</div>
+  <div class="section-header">
+    <div>
+      <div class="section-label">Regenerative</div>
+      <h2>Scalp PRP for Hair Restoration</h2>
+    </div>
+    <span class="price-badge">From $900</span>
+  </div>
+  <p class="section-desc">Harness your body's own growth factors for hair restoration. Platelet-rich plasma technology for natural, lasting results. Pairs with async hair-loss consultations.</p>
+
+  <table class="service-table">
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Price</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Scalp PRP &mdash; Single Session</strong></td>
+        <td class="price-cell">$900</td>
+        <td class="note-cell">PRP injections to stimulate hair follicles and reduce thinning.</td>
+      </tr>
+      <tr>
+        <td><strong>Scalp PRP &mdash; Series of 3</strong></td>
+        <td class="price-cell">$2,430</td>
+        <td class="note-cell">Saves 10% + $100 rebate.</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <div class="divider"></div>
 
 <!-- OURSELF PRODUCTS -->
 <section id="products">
-  <div class="section-label">Take-Home Skincare</div>
-  <h2>Ourself Subtopical Skincare</h2>
-  <p>Patented TRV&trade; technology delivers active peptides past the skin barrier &mdash; results previously only achievable with injectables. Recommended after every treatment.</p>
+  <div class="section-label">Exclusive Skincare Partner</div>
+  <h2>Ourself Clinical Skincare</h2>
+  <p class="section-desc">Biotech-driven formulas powered by the Tiered-Release Vesicle (TRV&trade;) &mdash; a proprietary delivery system that delivers active peptides past the skin barrier. Results previously only achievable with injectables.</p>
 
-  <div class="product-grid">
-    <div class="product-item">
-      <h4>Daily Purifying Cleanser</h4>
-      <p class="price">$45</p>
+  <div class="product-category">
+    <h3>Skin &amp; Sun</h3>
+    <div class="product-grid">
+      <div class="product-item">
+        <h4>Daily Purifying Cleanser</h4>
+        <p class="detail">150 mL</p>
+        <p class="price">$45</p>
+      </div>
+      <div class="product-item">
+        <h4>Mineral Sunscreen SPF 50</h4>
+        <p class="detail">PA++++ &middot; Reef-friendly</p>
+        <p class="price">$55</p>
+      </div>
+      <div class="product-item">
+        <h4>Daily Renewal Cream</h4>
+        <p class="detail">30 mL</p>
+        <p class="price">$85</p>
+      </div>
+      <div class="product-item">
+        <h4>Daily Renewal Cream Rich</h4>
+        <p class="detail">30 mL &middot; Dry / barrier-compromised</p>
+        <p class="price">$85</p>
+      </div>
     </div>
-    <div class="product-item">
-      <h4>Advanced Regenerative Serum 30 mL</h4>
-      <p class="price">$230</p>
+  </div>
+
+  <div class="product-category">
+    <h3>Treatment Serums</h3>
+    <div class="product-grid">
+      <div class="product-item">
+        <h4>Advanced Regenerative Serum</h4>
+        <p class="detail">15 mL (Intro)</p>
+        <p class="price">$120</p>
+      </div>
+      <div class="product-item">
+        <h4>Regenerative Eye Serum</h4>
+        <p class="detail">16.5 mL</p>
+        <p class="price">$130</p>
+      </div>
+      <div class="product-item">
+        <h4>Complexion Brightening Serum</h4>
+        <p class="detail">30 mL</p>
+        <p class="price">$189</p>
+      </div>
+      <div class="product-item">
+        <h4>Advanced Regenerative Serum</h4>
+        <p class="detail">30 mL</p>
+        <p class="price">$230</p>
+      </div>
+      <div class="product-item">
+        <h4>Daily Dark Spot Intercept</h4>
+        <p class="detail">30 mL</p>
+        <p class="price">$230</p>
+      </div>
     </div>
-    <div class="product-item">
-      <h4>Advanced Regenerative Serum 15 mL</h4>
-      <p class="price">$120</p>
+  </div>
+
+  <div class="product-category">
+    <h3>Lip Collection</h3>
+    <div class="product-grid">
+      <div class="product-item">
+        <h4>Lip Conditioner</h4>
+        <p class="detail">3 mL &middot; Clear, Berry, or Sunset</p>
+        <p class="price">$35</p>
+      </div>
+      <div class="product-item">
+        <h4>Lip Conditioner Trio</h4>
+        <p class="detail">All 3 shades &mdash; save $20</p>
+        <p class="price">$85</p>
+      </div>
+      <div class="product-item">
+        <h4>Replenishing Lip Filler Refill</h4>
+        <p class="detail">Refill cartridge</p>
+        <p class="price">$125</p>
+      </div>
+      <div class="product-item">
+        <h4>Replenishing Lip Filler</h4>
+        <p class="detail">1.7 mL &middot; TRV technology</p>
+        <p class="price">$145</p>
+      </div>
     </div>
-    <div class="product-item">
-      <h4>Regenerative Eye Serum</h4>
-      <p class="price">$130</p>
+  </div>
+
+  <div class="product-category">
+    <h3>Value Sets</h3>
+    <div class="product-grid">
+      <div class="product-item">
+        <h4>Lip Maintenance Regimen</h4>
+        <p class="detail">Refill + Conditioner set</p>
+        <p class="price">$160</p>
+      </div>
+      <div class="product-item">
+        <h4>Face Firming Duo</h4>
+        <p class="detail">ARS 15 mL + Eye Serum</p>
+        <p class="price">$225</p>
+      </div>
+      <div class="product-item">
+        <h4>Filler Duo</h4>
+        <p class="detail">Lip Filler + Refill + Conditioner</p>
+        <p class="price">$265</p>
+      </div>
+      <div class="product-item">
+        <h4>Filler Trio</h4>
+        <p class="detail">Full lip system</p>
+        <p class="price">$300</p>
+      </div>
     </div>
-    <div class="product-item">
-      <h4>Complexion Brightening Serum</h4>
-      <p class="price">$189</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROTOCOL BUNDLES -->
+<section id="bundles">
+  <div class="section-label">Post-Treatment Care</div>
+  <h2>Protocol Bundles</h2>
+  <p class="section-desc">Procedure-paired regimens at bundled pricing &mdash; recommended as part of your post-treatment plan.</p>
+
+  <table class="bundle-table">
+    <thead>
+      <tr>
+        <th>Bundle</th>
+        <th>Use Case</th>
+        <th>Bundle Price</th>
+        <th>Individual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>HydraGlow Home Regimen</strong><br><span style="font-size:12px;color:var(--slate)">Cleanser + Daily Renewal Cream + Mineral SPF</span></td>
+        <td class="note-cell">Post-HydraFacial</td>
+        <td><span class="bundle-price">$165</span></td>
+        <td><span class="bundle-compare">$185</span></td>
+      </tr>
+      <tr>
+        <td><strong>Collagen Recovery Kit</strong><br><span style="font-size:12px;color:var(--slate)">Daily Renewal Cream Rich + Mineral SPF 50</span></td>
+        <td class="note-cell">Post-Microneedling</td>
+        <td><span class="bundle-price">$125</span></td>
+        <td><span class="bundle-compare">$140</span></td>
+      </tr>
+      <tr>
+        <td><strong>Pigment Protocol</strong><br><span style="font-size:12px;color:var(--slate)">Complexion Brightening Serum + Mineral SPF</span></td>
+        <td class="note-cell">Melasma / Hyperpigmentation</td>
+        <td><span class="bundle-price">$219</span></td>
+        <td><span class="bundle-compare">$244</span></td>
+      </tr>
+      <tr>
+        <td><strong>Lip Continuity Plan</strong><br><span style="font-size:12px;color:var(--slate)">Replenishing Lip Filler + Lip Conditioner</span></td>
+        <td class="note-cell">Post-Lip Treatment</td>
+        <td><span class="bundle-price">$165</span></td>
+        <td><span class="bundle-compare">$180</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- MEMBER DISCOUNTS -->
+<section id="membership">
+  <div class="section-label">Save More</div>
+  <h2>Member Skincare Discounts</h2>
+  <p class="section-desc">Glow Aesthetics members receive discounted pricing on all Ourself products and up to 20% off services.</p>
+
+  <div class="member-grid">
+    <div class="member-card">
+      <div class="discount">10%</div>
+      <div class="tier">Glow Essentials</div>
+      <div class="tier-sub">DPC Foundation</div>
     </div>
-    <div class="product-item">
-      <h4>Dark Spot Intercept</h4>
-      <p class="price">$230</p>
+    <div class="member-card">
+      <div class="discount">15%</div>
+      <div class="tier">Glow Plus</div>
+      <div class="tier-sub">DPC Optimal</div>
     </div>
-    <div class="product-item">
-      <h4>Daily Renewal Cream</h4>
-      <p class="price">$85</p>
+    <div class="member-card">
+      <div class="discount">20%</div>
+      <div class="tier">Glow VIP</div>
+      <div class="tier-sub">DPC Signature</div>
     </div>
-    <div class="product-item">
-      <h4>Daily Renewal Cream Rich</h4>
-      <p class="price">$85</p>
+  </div>
+
+  <p style="text-align:center;margin-top:24px;"><a href="https://rootboundhealth.com" class="btn btn-outline" style="font-size:13px;">Explore Glow Membership</a></p>
+</section>
+
+<div class="divider"></div>
+
+<!-- TREATMENT JOURNEYS -->
+<section>
+  <div class="section-label">Multi-Session Plans</div>
+  <h2>Treatment Journeys &amp; Special Packages</h2>
+  <p class="section-desc">Multi-modality plans combining HydraFacial, SkinPen, and Daxxify over 11&ndash;20 weeks. Designed for lasting, progressive results.</p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="tag">Anti-Aging</div>
+      <h3>The Deep Roots Rebuild</h3>
+      <p>5-session collagen rebuild for mature skin 45+. Progressive stimulation + dynamic line control.</p>
+      <ul>
+        <li>HydraFacial Platinum (Sessions 1 &amp; 5)</li>
+        <li>SkinPen Face (Sessions 2 &amp; 4)</li>
+        <li>Daxxify Full Face (Session 3)</li>
+      </ul>
+      <div class="price">12 Weeks &middot; From $2,790</div>
     </div>
-    <div class="product-item">
-      <h4>Mineral SPF 50</h4>
-      <p class="price">$55</p>
+
+    <div class="service-card">
+      <div class="tag">Brightening</div>
+      <h3>The Luminous Reset</h3>
+      <p>5-session pigmentation correction. Interrupt melanin signaling and resurface for even tone.</p>
+      <ul>
+        <li>HydraFacial Deluxe + Platinum</li>
+        <li>SkinPen superficial</li>
+        <li>Optional Daxxify periorbital</li>
+      </ul>
+      <div class="price">11 Weeks &middot; From $1,450</div>
     </div>
-    <div class="product-item">
-      <h4>Replenishing Lip Filler</h4>
-      <p class="price">$145</p>
+
+    <div class="service-card">
+      <div class="tag">Perioral &amp; Eyes</div>
+      <h3>The Garden of Youth</h3>
+      <p>5-session perioral + periorbital rejuvenation. Non-injectable volume and precision neuromodulator.</p>
+      <ul>
+        <li>Platinum + Perk Lip + Perk Eye</li>
+        <li>Daxxify periorbital + perioral</li>
+        <li>SkinPen full face</li>
+      </ul>
+      <div class="price">14 Weeks &middot; From $2,400</div>
     </div>
-    <div class="product-item">
-      <h4>Lip Filler Refill</h4>
-      <p class="price">$125</p>
+
+    <div class="service-card">
+      <div class="tag">Hydration</div>
+      <h3>The Root Revival</h3>
+      <p>5-session deep hydration for GLP-1 patients, perimenopause, and compromised barriers.</p>
+      <ul>
+        <li>HydraFacial Deluxe + Platinum</li>
+        <li>SkinPen superficial</li>
+        <li>Daxxify per ARNP assessment</li>
+      </ul>
+      <div class="price">13 Weeks &middot; From $1,450</div>
     </div>
-    <div class="product-item">
-      <h4>Lip Conditioner</h4>
-      <p class="price">$35</p>
+
+    <div class="service-card">
+      <div class="tag">Prevention</div>
+      <h3>The First Root</h3>
+      <p>5-session intro for ages 25&ndash;40. Collagen banking, early intervention, first-time aesthetic clients.</p>
+      <ul>
+        <li>Express &rarr; Deluxe &rarr; Platinum upgrade</li>
+        <li>SkinPen conservative</li>
+        <li>Daxxify early prevention</li>
+      </ul>
+      <div class="price">14 Weeks &middot; From $1,695</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Event</div>
+      <h3>Wedding &amp; Special Events</h3>
+      <p>The Bloom (party tier), The Radiance (couples), and The Root Glow Bridal Series.</p>
+      <ul>
+        <li>Party: from $225/person (4+)</li>
+        <li>Couples: $590 per pair</li>
+        <li>Bridal Series: 4 sessions over 8 weeks</li>
+      </ul>
+      <div class="price">From $225</div>
     </div>
   </div>
 </section>
@@ -597,7 +1574,7 @@ footer a:hover { color: var(--gold); }
   <div class="provider">
     <div class="provider-text">
       <h3>Kailyn Elliott</h3>
-      <div class="credential">DNP, MSN, FNP-BC</div>
+      <div class="credential">DNP, MSN, MBA, ARNP, FNP-BC</div>
       <p>Board-certified Family Nurse Practitioner with a Doctor of Nursing Practice from the University of Miami. Over 13 years of clinical experience across trauma, psychiatry, and community health. Every aesthetic treatment at RootBound Glow is performed or directly supervised by Kailyn, ensuring clinical safety and personalized results.</p>
     </div>
   </div>
@@ -618,6 +1595,7 @@ footer a:hover { color: var(--gold); }
       <p><strong>Phone:</strong> <a href="tel:+14256996873" style="color: var(--gold); display: inline;">(425) 699-6873</a></p>
       <p><strong>Fax:</strong> (800) 381-1472</p>
       <p><strong>Email:</strong> <a href="mailto:kailyn.elliott@rootboundhealth.com" style="color: var(--gold); display: inline;">kailyn.elliott@rootboundhealth.com</a></p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 7am&ndash;6pm &middot; Sat&ndash;Sun 9am&ndash;5pm</p>
     </div>
 
     <div class="contact-info">
@@ -665,13 +1643,21 @@ footer a:hover { color: var(--gold); }
   <div class="footer-grid">
     <div>
       <h4>RootBound Glow</h4>
-      <p>Medical aesthetics by RootBound Health PLLC. Daxxify, HydraFacial, SkinPen microneedling, and Ourself skincare. All treatments performed or supervised by a board-certified nurse practitioner.</p>
+      <p>Medical aesthetics by RootBound Health PLLC. Daxxify, HydraFacial, SkinPen microneedling, Scalp PRP, and Ourself clinical skincare. All treatments performed or supervised by a board-certified nurse practitioner.</p>
       <p style="margin-top: 16px;">10212 5th Ave NE, Suite 116<br>Seattle, WA 98125</p>
     </div>
     <div>
-      <h4>Quick Links</h4>
-      <a href="#services">Services</a>
-      <a href="#products">Ourself Products</a>
+      <h4>Services</h4>
+      <a href="#neurotoxins">Neurotoxins (Daxxify)</a>
+      <a href="#hydrafacial">HydraFacial &amp; Facials</a>
+      <a href="#skinpen">SkinPen Microneedling</a>
+      <a href="#scalp-prp">Scalp PRP</a>
+      <a href="#membership">Glow Membership</a>
+    </div>
+    <div>
+      <h4>Patients</h4>
+      <a href="#products">Ourself Skincare</a>
+      <a href="#bundles">Protocol Bundles</a>
       <a href="#provider">Our Provider</a>
       <a href="#contact">Contact</a>
       <a href="https://rootboundhealth.com">Main Site</a>
@@ -685,14 +1671,52 @@ footer a:hover { color: var(--gold); }
       <a href="https://www.linkedin.com/company/rootbound-health/">LinkedIn</a>
     </div>
   </div>
+
+  <div class="footer-legal">
+    <p class="footer-credential">Kal Elliott, DNP, MSN, MBA, ARNP, FNP-BC &mdash; NPI: 1225789456 &mdash; DEA Licensed</p>
+    <div class="footer-badges">
+      <span class="footer-badge">WCAG 2.1 Level AA</span>
+      <span class="footer-badge">Section 508</span>
+      <span class="footer-badge">ADA Accessible</span>
+    </div>
+    <p style="margin-top: 16px;">The information on this website is for general informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for medical guidance. RootBound Health PLLC is a Washington State licensed healthcare practice.</p>
+    <p>RootBound Health PLLC &mdash; Licensed in the State of Washington. Language assistance services available. If you need an interpreter or translated materials, please contact us at (425) 699-6873.</p>
+  </div>
+
   <div class="footer-bottom">
     <p>&copy; 2026 RootBound Health PLLC. All rights reserved.</p>
     <div class="footer-links">
       <a href="#privacy">Privacy Policy</a>
       <a href="https://rootboundhealth.com">Terms of Use</a>
+      <a href="https://rootboundhealth.com">Notice of Privacy Practices</a>
+      <a href="https://rootboundhealth.com">Accessibility</a>
     </div>
   </div>
 </footer>
+
+<!-- FLOATING QUICK CONTACT BAR -->
+<div class="floating-bar">
+  <a href="https://dashboard.boulevard.io/booking/rootbound-health" class="btn">Book Now</a>
+  <a href="tel:+14256996873">(425) 699-6873</a>
+  <span style="color:var(--slate);font-size:12px;">|</span>
+  <a href="tel:+18003811472" style="font-size:12px;">Fax: (800) 381-1472</a>
+</div>
+
+<script>
+// Cookie consent
+(function() {
+  if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(function() {
+      document.getElementById('cookieBanner').classList.add('show');
+    }, 1500);
+  }
+})();
+
+function acceptCookies() {
+  localStorage.setItem('cookieConsent', 'true');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+</script>
 
 </body>
 </html>
