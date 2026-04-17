@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>RootBound Glow — Medical Aesthetics by RootBound Health</title>
+<meta name="description" content="Medical aesthetics by RootBound Health. Daxxify, HydraFacial, SkinPen microneedling, and Ourself skincare. Seattle, WA.">
+<meta name="author" content="RootBound Health PLLC">
+<link rel="canonical" href="https://glow.rootboundhealth.com">
+<meta property="og:title" content="RootBound Glow — Medical Aesthetics">
+<meta property="og:description" content="Daxxify, HydraFacial, SkinPen, and Ourself skincare. Supervised by Kailyn Elliott, DNP, FNP-BC. Seattle, WA.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RootBound Health">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #003B4F;
+  --navy-deep: #002434;
+  --navy-mid: #004E6A;
+  --gold: #D4AF37;
+  --gold-light: #E8CC66;
+  --gold-pale: rgba(212,175,55,0.1);
+  --ivory: #F9F5EC;
+  --ivory-warm: #F5F0E4;
+  --slate: rgba(249,245,236,0.6);
+  --white: #FFFFFF;
+  --border: rgba(212,175,55,0.12);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.15);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.2);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.25);
+  --radius: 8px;
+  --radius-lg: 16px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--navy);
+  color: var(--ivory);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+header {
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.logo span { color: var(--ivory); font-weight: 300; }
+
+nav { display: flex; gap: 28px; align-items: center; }
+
+nav a {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ivory);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+nav a:hover { color: var(--gold); }
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+.btn-outline:hover { background: var(--gold-pale); }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 24px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--ivory);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--slate);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* DIVIDER */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+section > p {
+  font-size: 16px;
+  color: var(--slate);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+/* SERVICE CARDS */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: rgba(0,59,79,0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: all var(--transition);
+}
+
+.service-card:hover {
+  border-color: rgba(212,175,55,0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--ivory);
+  margin-bottom: 8px;
+}
+
+.service-card .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.service-card .price {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+/* OURSELF PRODUCTS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.product-item {
+  background: rgba(0,59,79,0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+
+.product-item h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ivory);
+  margin-bottom: 6px;
+}
+
+.product-item .price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* PROVIDER */
+.provider {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  background: rgba(0,59,79,0.35);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  margin-top: 48px;
+}
+
+.provider-text h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+
+.provider-text .credential {
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.provider-text p {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.75;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-info h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--ivory);
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.contact-info strong { color: var(--ivory); font-weight: 600; }
+
+/* SMS CONSENT */
+.sms-consent {
+  background: var(--gold-pale);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.sms-consent h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ivory);
+  margin-bottom: 8px;
+}
+
+.sms-consent p {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(212,175,55,0.15);
+  padding: 48px 40px 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+footer h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: var(--ivory);
+  margin-bottom: 16px;
+}
+
+footer p, footer a {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.8;
+}
+
+footer a {
+  text-decoration: none;
+  display: block;
+  transition: color var(--transition);
+}
+
+footer a:hover { color: var(--gold); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(212,175,55,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom p { font-size: 13px; color: var(--slate); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; display: inline; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header { padding: 0 20px; }
+  nav { gap: 16px; }
+  nav a { font-size: 12px; }
+  .hero { padding: 60px 20px 50px; }
+  section { padding: 60px 20px; }
+  .provider { flex-direction: column; padding: 32px 24px; text-align: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  nav a:not(.btn) { display: none; }
+  .hero h1 { font-size: 32px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo">RootBound <span>Glow</span></a>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a href="#provider">Provider</a>
+    <a href="#contact">Contact</a>
+    <a href="https://rootboundhealth.com" class="btn-outline btn" style="padding: 7px 18px; font-size: 12px;">Main Site</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Medical Aesthetics by RootBound Health</div>
+  <h1>Science-driven skin care, <em>beautifully</em> delivered.</h1>
+  <p>Daxxify neuromodulators, HydraFacial, SkinPen microneedling, and Ourself subtopical skincare — supervised by a board-certified nurse practitioner. Real results, no shortcuts.</p>
+  <div class="hero-cta">
+    <a href="https://dashboard.boulevard.io/booking/rootbound-health" class="btn">Book Your Appointment</a>
+    <a href="#services" class="btn btn-outline">Explore Services</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What We Offer</div>
+  <h2>Our Aesthetic Services</h2>
+  <p>Every treatment is performed or directly supervised by Kailyn Elliott, DNP, FNP-BC. We pair clinical precision with genuine care.</p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="tag">Neuromodulator</div>
+      <h3>Daxxify</h3>
+      <p>The only FDA-approved peptide-powered neuromodulator. Longer-lasting results for frown lines, crow's feet, forehead, jaw slimming, and more. 20 treatment areas available.</p>
+      <div class="price">From $78 &mdash; Full Face $1,300</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Facial Treatment</div>
+      <h3>HydraFacial</h3>
+      <p>Cleanse, extract, and hydrate in one session. Express, Deluxe, and Platinum tiers with Perk lip and eye add-ons. Body and lymphatic drainage protocols available.</p>
+      <div class="price">From $175 &mdash; Platinum $395</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Microneedling</div>
+      <h3>SkinPen</h3>
+      <p>FDA-cleared for acne scars. Collagen induction therapy for scars, stretch marks, fine lines, hyperpigmentation, and skin laxity. PRP add-on available.</p>
+      <div class="price">From $350 &mdash; PRP Face + Neck $650</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Scalp Treatment</div>
+      <h3>Keravive</h3>
+      <p>HydraFacial for your scalp. Exfoliates, nourishes, and hydrates the scalp to promote healthier, fuller-looking hair. Includes 30-day home spray.</p>
+      <div class="price">Single $295 &mdash; 3-Pack $795</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PACKAGES -->
+<section>
+  <div class="section-label">Value &amp; Results</div>
+  <h2>Series Packages &amp; Treatment Journeys</h2>
+  <p>Multi-session plans designed for lasting results. Save on series packages and follow structured treatment journeys tailored to your goals.</p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="tag">Series Packages</div>
+      <h3>Save with Series</h3>
+      <p>HydraFacial Express 6-Pack, Deluxe and Platinum 4-Packs, Keravive 3-Pack, SkinPen Face and PRP series. Save up to $300.</p>
+      <div class="price">From $795</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Multi-Modality</div>
+      <h3>Treatment Journeys</h3>
+      <p>5-session plans combining HydraFacial, SkinPen, and Daxxify over 11&ndash;14 weeks. Anti-aging, brightening, perioral, hydration, and preventive tracks.</p>
+      <div class="price">From $1,450</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Special Offers</div>
+      <h3>Intro &amp; Event Packages</h3>
+      <p>New patient intro, Fitzpatrick-specific protocols, GLP-1 skin restoration, wedding packages, and seasonal specials.</p>
+      <div class="price">From $185</div>
+    </div>
+
+    <div class="service-card">
+      <div class="tag">Skin-Specific</div>
+      <h3>Fitzpatrick Protocols</h3>
+      <p>Customized treatment plans for every skin type. Porcelain (I-II), Equilibrium (III), Caramel (IV), and Sanctuary (V-VI) protocols available.</p>
+      <div class="price">From $860</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OURSELF PRODUCTS -->
+<section id="products">
+  <div class="section-label">Take-Home Skincare</div>
+  <h2>Ourself Subtopical Skincare</h2>
+  <p>Patented TRV&trade; technology delivers active peptides past the skin barrier &mdash; results previously only achievable with injectables. Recommended after every treatment.</p>
+
+  <div class="product-grid">
+    <div class="product-item">
+      <h4>Daily Purifying Cleanser</h4>
+      <p class="price">$45</p>
+    </div>
+    <div class="product-item">
+      <h4>Advanced Regenerative Serum 30 mL</h4>
+      <p class="price">$230</p>
+    </div>
+    <div class="product-item">
+      <h4>Advanced Regenerative Serum 15 mL</h4>
+      <p class="price">$120</p>
+    </div>
+    <div class="product-item">
+      <h4>Regenerative Eye Serum</h4>
+      <p class="price">$130</p>
+    </div>
+    <div class="product-item">
+      <h4>Complexion Brightening Serum</h4>
+      <p class="price">$189</p>
+    </div>
+    <div class="product-item">
+      <h4>Dark Spot Intercept</h4>
+      <p class="price">$230</p>
+    </div>
+    <div class="product-item">
+      <h4>Daily Renewal Cream</h4>
+      <p class="price">$85</p>
+    </div>
+    <div class="product-item">
+      <h4>Daily Renewal Cream Rich</h4>
+      <p class="price">$85</p>
+    </div>
+    <div class="product-item">
+      <h4>Mineral SPF 50</h4>
+      <p class="price">$55</p>
+    </div>
+    <div class="product-item">
+      <h4>Replenishing Lip Filler</h4>
+      <p class="price">$145</p>
+    </div>
+    <div class="product-item">
+      <h4>Lip Filler Refill</h4>
+      <p class="price">$125</p>
+    </div>
+    <div class="product-item">
+      <h4>Lip Conditioner</h4>
+      <p class="price">$35</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROVIDER -->
+<section id="provider">
+  <div class="section-label">Your Provider</div>
+  <h2>Led by Clinical Expertise</h2>
+
+  <div class="provider">
+    <div class="provider-text">
+      <h3>Kailyn Elliott</h3>
+      <div class="credential">DNP, MSN, FNP-BC</div>
+      <p>Board-certified Family Nurse Practitioner with a Doctor of Nursing Practice from the University of Miami. Over 13 years of clinical experience across trauma, psychiatry, and community health. Every aesthetic treatment at RootBound Glow is performed or directly supervised by Kailyn, ensuring clinical safety and personalized results.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2>Contact &amp; Location</h2>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Visit Us</h3>
+      <p><strong>RootBound Health PLLC</strong></p>
+      <p>10212 5th Ave NE, Suite 116<br>Seattle, WA 98125</p>
+      <p><strong>Phone:</strong> <a href="tel:+14256996873" style="color: var(--gold); display: inline;">(425) 699-6873</a></p>
+      <p><strong>Fax:</strong> (800) 381-1472</p>
+      <p><strong>Email:</strong> <a href="mailto:kailyn.elliott@rootboundhealth.com" style="color: var(--gold); display: inline;">kailyn.elliott@rootboundhealth.com</a></p>
+    </div>
+
+    <div class="contact-info">
+      <h3>Book Online</h3>
+      <p>Schedule your aesthetic consultation or treatment online. Same-day and telehealth options available.</p>
+      <p style="margin-top: 16px;"><a href="https://dashboard.boulevard.io/booking/rootbound-health" class="btn">Book Your Appointment</a></p>
+    </div>
+  </div>
+
+  <!-- SMS CONSENT DISCLOSURE — TCR REQUIREMENT -->
+  <div class="sms-consent">
+    <h4>SMS &amp; Text Message Consent</h4>
+    <p>By providing your phone number to RootBound Health PLLC, you consent to receive text messages regarding appointment confirmations, reminders, follow-up care, and occasional promotional offers. Message frequency varies. Message and data rates may apply. You may opt out at any time by replying <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for assistance. Your consent is not a condition of purchase. See our <a href="#privacy" style="color: var(--gold); text-decoration: underline;">Privacy Policy</a> for details on how we handle your information.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRIVACY POLICY SUMMARY -->
+<section id="privacy" style="max-width: 800px;">
+  <div class="section-label">Legal</div>
+  <h2>Privacy Policy</h2>
+  <p style="max-width: 100%;">RootBound Health PLLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting your privacy. This summary covers how we collect and use information through this website and our text messaging service.</p>
+
+  <h3 style="font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--gold); margin-top: 32px; margin-bottom: 12px;">Information We Collect</h3>
+  <p style="max-width: 100%; font-size: 15px; color: var(--slate); line-height: 1.75;">When you book an appointment, contact us, or provide your phone number, we may collect your name, email address, phone number, and appointment preferences. We do not collect protected health information (PHI) through this website.</p>
+
+  <h3 style="font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--gold); margin-top: 32px; margin-bottom: 12px;">How We Use Your Information</h3>
+  <p style="max-width: 100%; font-size: 15px; color: var(--slate); line-height: 1.75;">We use your information to schedule appointments, send appointment confirmations and reminders via text message, provide follow-up care communications, and occasionally inform you of promotions or new services. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+  <h3 style="font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--gold); margin-top: 32px; margin-bottom: 12px;">Text Messaging</h3>
+  <p style="max-width: 100%; font-size: 15px; color: var(--slate); line-height: 1.75;">If you provide your phone number, you may receive text messages for appointment reminders, confirmations, and promotional offers. Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP. Reply HELP for assistance. Consent to receive text messages is not required to purchase services.</p>
+
+  <h3 style="font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--gold); margin-top: 32px; margin-bottom: 12px;">Your Rights</h3>
+  <p style="max-width: 100%; font-size: 15px; color: var(--slate); line-height: 1.75;">You may request access to, correction of, or deletion of your personal information at any time by contacting us at <a href="mailto:kailyn.elliott@rootboundhealth.com" style="color: var(--gold);">kailyn.elliott@rootboundhealth.com</a> or calling <a href="tel:+14256996873" style="color: var(--gold);">(425) 699-6873</a>.</p>
+
+  <h3 style="font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--gold); margin-top: 32px; margin-bottom: 12px;">Contact</h3>
+  <p style="max-width: 100%; font-size: 15px; color: var(--slate); line-height: 1.75;">RootBound Health PLLC<br>10212 5th Ave NE, Suite 116, Seattle, WA 98125<br>Phone: (425) 699-6873<br>Email: kailyn.elliott@rootboundhealth.com</p>
+
+  <p style="max-width: 100%; font-size: 13px; color: rgba(249,245,236,0.4); margin-top: 24px;">For our full HIPAA Notice of Privacy Practices, please visit <a href="https://rootboundhealth.com" style="color: var(--gold);">rootboundhealth.com</a> or request a copy at your next visit. Last updated: April 2026.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>RootBound Glow</h4>
+      <p>Medical aesthetics by RootBound Health PLLC. Daxxify, HydraFacial, SkinPen microneedling, and Ourself skincare. All treatments performed or supervised by a board-certified nurse practitioner.</p>
+      <p style="margin-top: 16px;">10212 5th Ave NE, Suite 116<br>Seattle, WA 98125</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#services">Services</a>
+      <a href="#products">Ourself Products</a>
+      <a href="#provider">Our Provider</a>
+      <a href="#contact">Contact</a>
+      <a href="https://rootboundhealth.com">Main Site</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="tel:+14256996873">(425) 699-6873</a>
+      <a href="mailto:kailyn.elliott@rootboundhealth.com">Email Us</a>
+      <a href="https://www.instagram.com/rootboundhealth/">Instagram</a>
+      <a href="https://x.com/RootBoundHealth">X / Twitter</a>
+      <a href="https://www.linkedin.com/company/rootbound-health/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 RootBound Health PLLC. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="https://rootboundhealth.com">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
